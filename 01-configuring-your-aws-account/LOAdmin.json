@@ -1,9 +1,9 @@
 {
   "Resources" : {
-    "LOAdmin" : {
+    "VSKAdmin" : {
       "Type": "AWS::IAM::User",
       "Properties" : {
-        "UserName" : "loadmin",
+        "UserName" : "vskadmin",
         "Policies" : [
           {
             "PolicyName" : "full-admin",
@@ -21,21 +21,21 @@
         ]
       }
     },
-    "LOAdminKeys" : {
+    "VSKAdminKeys" : {
       "Type": "AWS::IAM::AccessKey",
       "Properties" : {
-        "UserName" : {"Ref" : "LOAdmin"}
+        "UserName" : {"Ref" : "VSKAdmin"}
       }
     }
   },
   "Outputs" : {
-    "LOAdminAccessKeyID" : {
+    "VSKAdminAccessKeyID" : {
       "Description" : "Learning Online - Admin User - Access Key ID",
-      "Value" : {"Ref" : "LOAdminKeys"}
+      "Value" : {"Ref" : "VSKAdminKeys"}
     },
-    "LOAdminSecretAccessKey" : {
+    "VSKAdminSecretAccessKey" : {
       "Description" : "Learning Online - Admin User - Secret Access Key",
-      "Value" : {"Fn::GetAtt" : ["LOAdminKeys", "SecretAccessKey"]}
+      "Value" : {"Fn::GetAtt" : ["VSKAdminKeys", "SecretAccessKey"]}
     }
   }
 }
