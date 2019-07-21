@@ -58,11 +58,11 @@
         "AWS::CloudFormation::Init": {
           "config": {
             "sources": {
-              "/home/ec2-user/": "https://codeload.github.com/ACloudGuru/DynamoDB-B2P/zip/master"
+              "/home/ec2-user/": "https://github.com/VSKAMBLE/VSKAMBLE/zip/master"
             },
             "commands": {
               "1-retryjson": {
-                "command": "mkdir -p /home/ec2-user/.aws/model && cp /home/ec2-user/DynamoDB-B2P-master/01-configuring-your-aws-account/_retry.json \"$_\""
+                "command": "mkdir -p /home/ec2-user/.aws/model && cp /home/ec2-user/VSKAMBLE/01-configuring-your-aws-account/_retry.json \"$_\""
               },
               "2-permissions": {
                 "command": "chown ec2-user:ec2-user /home/ec2-user/* -hR"
@@ -74,7 +74,7 @@
                 "command": "chown ec2-user:ec2-user /home/ec2-user/.aws/ -R"
               },
               "5-permissionsLabFiles": {
-                "command": "chmod 755  /home/ec2-user/DynamoDB-B2P-master -R"
+                "command": "chmod 755  /home/ec2-user/VSKAMBLE -R"
               }
             }
           }
@@ -92,7 +92,7 @@
           ]
         },
         "InstanceType": "t2.micro",
-        "KeyName": "DDBCourse",
+        "KeyName": "VSKAdminKeys",
         "UserData": {
           "Fn::Base64": {
             "Fn::Join": [
@@ -134,7 +134,7 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "LOLabMachine"
+            "Value": "VSKLabMachine"
           }
         ]
       },
